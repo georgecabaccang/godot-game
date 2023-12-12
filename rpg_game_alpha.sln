@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rpg_game_alpha", "rpg_game_alpha.csproj", "{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{FD21C058-4509-4B3C-B58E-6D8F8CA62F57}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
