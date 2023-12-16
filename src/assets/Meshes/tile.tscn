@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce0n1x86k40u0"]
+
+[ext_resource type="ArrayMesh" uid="uid://dy3dc1etjhngm" path="res://src/assets/Vox/Tile.vox" id="1_1e58p"]
+
+[node name="Tile" type="Node3D"]
+
+[node name="Tile" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_1e58p")

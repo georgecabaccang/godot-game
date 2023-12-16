@@ -21,7 +21,7 @@ project/assembly_name="rpg_game_alpha"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/codeandweb.texturepacker/plugin.cfg")
+enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg", "res://addons/codeandweb.texturepacker/plugin.cfg")
 
 [input]
 

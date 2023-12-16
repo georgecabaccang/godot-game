@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://bgsckdr5bv7ki"]
+
+[ext_resource type="MeshLibrary" uid="uid://buldhnfsta1c2" path="res://src/assets/meshLibrary.tres" id="1_mw0yu"]
+[ext_resource type="Texture2D" uid="uid://b04y5w24k8ufb" path="res://src/assets/character/rogue spritesheet calciumtrice.png" id="2_lhkpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6lul"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo6qw"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dai2"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2478r"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5uv2"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q4ux"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpjiv"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipriy"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhmsh"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd46v"]
+atlas = ExtResource("2_lhkpj")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovaxo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6lul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo6qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dai2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2478r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5uv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q4ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpjiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipriy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhmsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd46v")
+}],
+"loop": true,
+"name": &"Idle_Right",
+"speed": 5.0
+}]
+
+[node name="TestScene" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+rotation_order = 0
+mesh_library = ExtResource("1_mw0yu")
+cell_size = Vector3(1, 0.3, 1)
+cell_octant_size = 10
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(1, 1, 0, 1, 0, 0, 2, 0, 0, 2, 1, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 1, 2, 0, 2, 2, 0, 1, 65535, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 2, 65535, 0, 3, 65535, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 4, 65534, 0, 4, 65535, 0, 5, 2, 0, 5, 1, 0, 5, 0, 0, 5, 65535, 0, 5, 65534, 0, 5, 3, 0, 4, 3, 0, 0, 2, 0, 0, 1, 0, 65535, 1, 0, 65535, 0, 0, 65535, 65535, 0, 65535, 65534, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 65534, 1, 0, 65534, 2, 0, 65535, 2, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 4, 0, 5, 4, 0, 3, 4, 0, 2, 4, 0, 0, 4, 0, 1, 4, 0, 65534, 0, 0, 65534, 65535, 0, 65534, 65534, 0, 65535, 65533, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 0, 5, 5, 0, 4, 5, 0, 3, 5, 0, 2, 5, 0, 1, 5, 0, 2, 6, 0, 5, 6, 0, 4, 6, 0, 3, 6, 0, 1, 6, 0, 0, 6, 0, 0, 5, 0, 65535, 5, 0, 65534, 5, 0, 65534, 6, 0, 65535, 6, 0, 65534, 4, 0, 65534, 3, 0, 65535, 4, 0, 65534, 65533, 0, 6, 6, 0, 6, 5, 0, 6, 4, 0, 6, 3, 0, 6, 65533, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 6, 2, 0, 65533, 65533, 0, 65533, 65534, 0, 65533, 65535, 0, 65533, 0, 0, 65533, 1, 0, 65533, 2, 0, 65533, 3, 0, 65533, 4, 0, 65533, 5, 0, 65533, 6, 0, 131069, 65533, 0, 131069, 65534, 0, 131069, 65535, 0, 131070, 65534, 0, 131070, 65533, 0, 65542, 65533, 0, 65540, 65533, 0, 65541, 65533, 0, 65539, 65533, 0, 65541, 65534, 0, 65540, 65534, 0, 131069, 6, 0, 131070, 6, 0, 131069, 5, 0, 131069, 4, 0, 196605, 65533, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/zeroCorner = Vector2(-3, -3)
+metadata/mapSize = Vector3(10, 2, 10)
+
+[node name="Unit" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.6, 0.3, 0.6)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Unit"]
+offset = Vector2(0, 16)
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_ovaxo")
+animation = &"Idle_Right"
+frame_progress = 0.647119
