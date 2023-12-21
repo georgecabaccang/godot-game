@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="rpg_game_alpha"
-run/main_scene="res://src/maps/first-map/tile_map.tscn"
+run/main_scene="res://src/scenes/testScene.tscn"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,7 +21,11 @@ project/assembly_name="rpg_game_alpha"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg", "res://addons/codeandweb.texturepacker/plugin.cfg")
+enabled=PackedStringArray("res://addons/GridMap_to_Coordinates/plugin.cfg", "res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 

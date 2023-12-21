@@ -1,7 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgsckdr5bv7ki"]
+[gd_scene load_steps=19 format=3 uid="uid://bgsckdr5bv7ki"]
 
 [ext_resource type="MeshLibrary" uid="uid://buldhnfsta1c2" path="res://src/assets/meshLibrary.tres" id="1_mw0yu"]
 [ext_resource type="Texture2D" uid="uid://b04y5w24k8ufb" path="res://src/assets/character/rogue spritesheet calciumtrice.png" id="2_lhkpj"]
+[ext_resource type="Script" path="res://addons/GridMap_to_Coordinates/LevelMap.cs" id="2_rogd8"]
+[ext_resource type="Script" path="res://src/scripts/model/Map.cs" id="3_13dje"]
+
+[sub_resource type="Resource" id="Resource_8hhmp"]
+script = ExtResource("3_13dje")
+filePath = ""
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6lul"]
 atlas = ExtResource("2_lhkpj")
@@ -81,27 +87,48 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n4fcs"]
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_0vih6"]
+script = ExtResource("3_13dje")
+filePath = ""
+
 [node name="TestScene" type="Node3D"]
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="TestLevel" type="GridMap" parent="."]
 rotation_order = 0
 mesh_library = ExtResource("1_mw0yu")
 cell_size = Vector3(1, 0.3, 1)
 cell_octant_size = 10
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(1, 1, 0, 1, 0, 0, 2, 0, 0, 2, 1, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 1, 2, 0, 2, 2, 0, 1, 65535, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 2, 65535, 0, 3, 65535, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 4, 65534, 0, 4, 65535, 0, 5, 2, 0, 5, 1, 0, 5, 0, 0, 5, 65535, 0, 5, 65534, 0, 5, 3, 0, 4, 3, 0, 0, 2, 0, 0, 1, 0, 65535, 1, 0, 65535, 0, 0, 65535, 65535, 0, 65535, 65534, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 65534, 1, 0, 65534, 2, 0, 65535, 2, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 4, 0, 5, 4, 0, 3, 4, 0, 2, 4, 0, 0, 4, 0, 1, 4, 0, 65534, 0, 0, 65534, 65535, 0, 65534, 65534, 0, 65535, 65533, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 0, 5, 5, 0, 4, 5, 0, 3, 5, 0, 2, 5, 0, 1, 5, 0, 2, 6, 0, 5, 6, 0, 4, 6, 0, 3, 6, 0, 1, 6, 0, 0, 6, 0, 0, 5, 0, 65535, 5, 0, 65534, 5, 0, 65534, 6, 0, 65535, 6, 0, 65534, 4, 0, 65534, 3, 0, 65535, 4, 0, 65534, 65533, 0, 6, 6, 0, 6, 5, 0, 6, 4, 0, 6, 3, 0, 6, 65533, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 6, 2, 0, 65533, 65533, 0, 65533, 65534, 0, 65533, 65535, 0, 65533, 0, 0, 65533, 1, 0, 65533, 2, 0, 65533, 3, 0, 65533, 4, 0, 65533, 5, 0, 65533, 6, 0, 131069, 65533, 0, 131069, 65534, 0, 131069, 65535, 0, 131070, 65534, 0, 131070, 65533, 0, 65542, 65533, 0, 65540, 65533, 0, 65541, 65533, 0, 65539, 65533, 0, 65541, 65534, 0, 65540, 65534, 0, 131069, 6, 0, 131070, 6, 0, 131069, 5, 0, 131069, 4, 0, 196605, 65533, 0)
+"cells": PackedInt32Array(1, 1, 0, 1, 0, 0, 2, 0, 0, 2, 1, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 1, 2, 0, 2, 2, 0, 1, 65535, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 2, 65535, 0, 3, 65535, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 4, 65534, 0, 4, 65535, 0, 5, 2, 0, 5, 1, 0, 5, 0, 0, 5, 65535, 0, 5, 65534, 0, 5, 3, 0, 4, 3, 0, 0, 2, 0, 0, 1, 0, 65535, 1, 0, 65535, 0, 0, 65535, 65535, 0, 65535, 65534, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 65534, 1, 0, 65534, 2, 0, 65535, 2, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 4, 0, 5, 4, 0, 3, 4, 0, 2, 4, 0, 0, 4, 0, 1, 4, 0, 65534, 0, 0, 65534, 65535, 0, 65534, 65534, 0, 65535, 65533, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 0, 5, 5, 0, 4, 5, 0, 3, 5, 0, 2, 5, 0, 1, 5, 0, 2, 6, 0, 5, 6, 0, 4, 6, 0, 3, 6, 0, 1, 6, 0, 0, 6, 0, 0, 5, 0, 65535, 5, 0, 65534, 5, 0, 65534, 6, 0, 65535, 6, 0, 65534, 4, 0, 65534, 3, 0, 65535, 4, 0, 65534, 65533, 0, 6, 6, 0, 6, 5, 0, 6, 4, 0, 6, 3, 0, 6, 65533, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 6, 2, 0, 65533, 0, 0, 65533, 1, 0, 65533, 2, 0, 65533, 3, 0, 65533, 4, 0, 65533, 5, 0, 65533, 6, 0, 131069, 65533, 0, 131069, 65534, 0, 131069, 65535, 0, 131070, 65534, 0, 131070, 65533, 0, 65542, 65533, 0, 65540, 65533, 0, 65541, 65533, 0, 65539, 65533, 0, 65541, 65534, 0, 65540, 65534, 0, 131069, 6, 0, 131070, 6, 0, 131069, 5, 0, 131069, 4, 0, 196605, 65533, 0, 65533, 65535, 0, 65533, 65534, 0, 65533, 65533, 0)
 }
+script = ExtResource("2_rogd8")
+map = SubResource("Resource_8hhmp")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
-metadata/zeroCorner = Vector2(-3, -3)
-metadata/mapSize = Vector3(10, 2, 10)
 
-[node name="Unit" type="Node3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.6, 0.3, 0.6)
+[node name="Unit" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.5, 0.3, 0.5)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Unit"]
 offset = Vector2(0, 16)
 pixel_size = 0.03
 sprite_frames = SubResource("SpriteFrames_ovaxo")
 animation = &"Idle_Right"
-frame_progress = 0.647119
+frame = 1
+frame_progress = 0.0961934
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Unit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_n4fcs")
+
+[node name="DummyMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_mw0yu")
+data = {
+"cells": PackedInt32Array(0, 65533, 0, -131076, 65529, 0)
+}
+script = ExtResource("2_rogd8")
+map = SubResource("Resource_0vih6")
+metadata/_editor_floor_ = Vector3(0, -3, 0)

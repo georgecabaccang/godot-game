@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://7dy5n4sntpjm"]
+
+[ext_resource type="Script" path="res://addons/GridMap_to_Coordinates/CreateMapButton.cs" id="1_76p21"]
+
+[node name="CreateMapButton" type="Button"]
+text = "Create/Update Map"
+script = ExtResource("1_76p21")
