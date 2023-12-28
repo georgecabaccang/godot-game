@@ -1,11 +1,7 @@
 using Godot;
 
-[Tool]
 public partial class LevelMap : GridMap {
 
-    [Export]public Map map = new();
+    [Export]public Godot.Collections.Dictionary<Vector2, Vector3I> coordinates;
 
-    public override void _Ready(){
-        // GD.Print(GetClass());
-    }
 }

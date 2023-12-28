@@ -7,13 +7,15 @@ public partial class CreateMap : EditorInspectorPlugin {
 
     public override bool _CanHandle(GodotObject @object) {
 
-        return @object is LevelMap;
+        return @object is GridMap;
     }
 
     public override void _ParseEnd(GodotObject @object) {
 
-        button = GD.Load<PackedScene>("res://addons/GridMap_to_Coordinates/CreateMapButton.tscn").Instantiate<CreateMapButton>();
-        button.mapObject = @object as LevelMap;
+        button = new() {
+            Text = "Create/Update Map",
+            levelMap = @object as GridMap
+        };
         AddCustomControl(button);
     }
 }

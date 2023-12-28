@@ -3,6 +3,7 @@ using Godot;
 
 [Tool]
 public partial class GridMaptoCoordinates : EditorPlugin {
+	
 	private CreateMap plugin;
 
 	public override void _EnterTree() {
