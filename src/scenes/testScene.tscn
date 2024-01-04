@@ -1,8 +1,89 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgsckdr5bv7ki"]
+[gd_scene load_steps=30 format=3 uid="uid://bgsckdr5bv7ki"]
 
+[ext_resource type="Script" path="res://InputController.cs" id="1_fvsaj"]
 [ext_resource type="MeshLibrary" uid="uid://buldhnfsta1c2" path="res://src/assets/meshLibrary.tres" id="1_mw0yu"]
-[ext_resource type="Texture2D" uid="uid://b04y5w24k8ufb" path="res://src/assets/character/rogue spritesheet calciumtrice.png" id="2_lhkpj"]
+[ext_resource type="Texture2D" uid="uid://b04y5w24k8ufb" path="res://src/assets/sprites/character/rogue spritesheet calciumtrice.png" id="2_lhkpj"]
 [ext_resource type="Script" path="res://addons/GridMap_to_Coordinates/LevelMap.cs" id="2_rogd8"]
+[ext_resource type="Texture2D" uid="uid://coc3n5ewoi7g0" path="res://src/assets/sprites/cursor/Cursor.png" id="3_01ef3"]
+[ext_resource type="Script" path="res://src/scenes/Cursor.cs" id="5_d3mv4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n84l"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3edj"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alp5t"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2s5l"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uudvg"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnoy3"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fikpg"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3jeb"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw5y6"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwqg2"]
+atlas = ExtResource("3_01ef3")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vf80v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n84l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3edj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alp5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2s5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uudvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnoy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fikpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3jeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw5y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwqg2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6lul"]
 atlas = ExtResource("2_lhkpj")
@@ -86,6 +167,7 @@ animations = [{
 height = 1.0
 
 [node name="TestScene" type="Node3D"]
+script = ExtResource("1_fvsaj")
 
 [node name="TestLevel" type="GridMap" parent="."]
 rotation_order = 0
@@ -200,6 +282,14 @@ Vector2(9, 9): Vector3i(6, 0, 6)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
+[node name="Cursor" type="AnimatedSprite3D" parent="TestLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.35, 0.5)
+pixel_size = 0.03
+axis = 1
+sprite_frames = SubResource("SpriteFrames_vf80v")
+frame_progress = 0.686063
+script = ExtResource("5_d3mv4")
+
 [node name="Unit" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.5, 0.3, 3.5)
 
@@ -208,8 +298,7 @@ offset = Vector2(0, 16)
 pixel_size = 0.03
 sprite_frames = SubResource("SpriteFrames_ovaxo")
 animation = &"Idle_Right"
-frame = 1
-frame_progress = 0.0961934
+frame_progress = 0.904058
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Unit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

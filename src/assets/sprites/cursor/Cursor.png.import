@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b04y5w24k8ufb"
-path.s3tc="res://.godot/imported/rogue spritesheet calciumtrice.png-3f36679ca7fe1f5f7b262c4b19ef3256.s3tc.ctex"
+uid="uid://coc3n5ewoi7g0"
+path.s3tc="res://.godot/imported/Cursor.png-955003cc3b4f2fff6bba0ad20cc090e5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/character/rogue spritesheet calciumtrice.png"
-dest_files=["res://.godot/imported/rogue spritesheet calciumtrice.png-3f36679ca7fe1f5f7b262c4b19ef3256.s3tc.ctex"]
+source_file="res://src/assets/sprites/cursor/Cursor.png"
+dest_files=["res://.godot/imported/Cursor.png-955003cc3b4f2fff6bba0ad20cc090e5.s3tc.ctex"]
 
 [params]
 
