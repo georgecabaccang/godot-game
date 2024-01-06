@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://brnqv0hqpv0fd"]
+
+[ext_resource type="Texture2D" uid="uid://coc3n5ewoi7g0" path="res://src/assets/sprites/cursor/Cursor.png" id="2_cdks6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdvsv"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjm5u"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atds6"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mksie"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7vky"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_373x1"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qofgu"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htu7e"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buai7"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt800"]
+atlas = ExtResource("2_cdks6")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21k77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdvsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjm5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atds6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mksie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7vky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_373x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qofgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htu7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buai7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt800")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="LevelMapCursor" type="Node3D"]
+
+[node name="CursorAnimationSprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.35, 0)
+pixel_size = 0.03
+sprite_frames = SubResource("SpriteFrames_21k77")
+frame_progress = 0.151851

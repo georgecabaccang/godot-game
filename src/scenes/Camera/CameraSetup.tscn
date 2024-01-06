@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://db4evbaemxn5v"]
+
+[ext_resource type="Script" path="res://src/scripts/Common/Camera/CameraSetup.cs" id="1_oyivn"]
+
+[node name="CameraSetup" type="Node3D"]
+script = ExtResource("1_oyivn")
+
+[node name="Heading" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Pitch" type="Node3D" parent="Heading"]
+transform = Transform3D(1, 0, 0, 0, 0.805928, 0.592013, 0, -0.592013, 0.805928, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Heading/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -2.98023e-08, 1, 0, 0, 10)
+projection = 1
+size = 8.0
