@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://das0qy13trv68"]
-
-[ext_resource type="Script" path="res://src/scripts/Controller/BattleController.cs" id="1_4uft2"]
-
-[node name="BattleController" type="Node3D"]
-script = ExtResource("1_4uft2")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)

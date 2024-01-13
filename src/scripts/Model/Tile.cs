@@ -4,14 +4,21 @@ public partial class Tile : RefCounted
 {
     public const float stepHeight = 0.3f;
 
-    private Vector3I pos;
-    public int height { get { return pos.Y; }}
+    private Vector3I localPos;
+    public Vector2I pos;
+    public int height { get { return localPos.Y; }}
 
-    public Vector3 center { get { return new Vector3(pos.X, pos.Y * stepHeight, pos.Z); }}
+    public Vector3 center { get { return new Vector3(localPos.X, localPos.Y * stepHeight, localPos.Z); }}
+    
+    public Node3D content;
 
-    public Tile(Vector3I _pos)
+    //Search properties
+    public Tile previous;
+    public int distance;
+
+    public Tile(Vector3I _localPos)
     {
-        pos = _pos;
+        localPos = _localPos;
     }
 
     public Tile() {}

@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgsckdr5bv7ki"]
+[gd_scene load_steps=18 format=3 uid="uid://bgsckdr5bv7ki"]
 
 [ext_resource type="Script" path="res://src/scripts/Controller/InputController.cs" id="1_fvsaj"]
 [ext_resource type="MeshLibrary" uid="uid://buldhnfsta1c2" path="res://src/assets/meshLibrary.tres" id="1_mw0yu"]
 [ext_resource type="Texture2D" uid="uid://b04y5w24k8ufb" path="res://src/assets/sprites/character/rogue spritesheet calciumtrice.png" id="2_lhkpj"]
 [ext_resource type="Script" path="res://addons/GridMap_to_Coordinates/LevelMap.cs" id="2_rogd8"]
+[ext_resource type="Script" path="res://src/scripts/Model/Unit.cs" id="4_dqd31"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6lul"]
 atlas = ExtResource("2_lhkpj")
@@ -206,7 +207,8 @@ startingPos = Vector2i(9, 9)
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Unit" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3, 0.3, 3)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.3, 0)
+script = ExtResource("4_dqd31")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Unit"]
 offset = Vector2(0, 16)
@@ -216,18 +218,17 @@ animation = &"Idle_Right"
 frame_progress = 0.904058
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Unit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_n4fcs")
 
-[node name="CameraRig" type="Node3D" parent="."]
+[node name="CameraSetup" type="Node3D" parent="."]
 
-[node name="Heading" type="Node3D" parent="CameraRig"]
+[node name="Heading" type="Node3D" parent="CameraSetup"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 
-[node name="Pitch" type="Node3D" parent="CameraRig/Heading"]
+[node name="Pitch" type="Node3D" parent="CameraSetup/Heading"]
 transform = Transform3D(1, 0, 0, 0, 0.805928, 0.592013, 0, -0.592013, 0.805928, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig/Heading/Pitch"]
+[node name="Camera3D" type="Camera3D" parent="CameraSetup/Heading/Pitch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -2.98023e-08, 1, 0, 0, 10)
 projection = 1
-size = 10.0
+size = 8.0

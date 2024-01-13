@@ -28,7 +28,6 @@ public partial class StateMachine : Node
             return newState;
         }
         T target = States.GetNode<T>(typeof(T).Name);
-        AddChild(target);
         return target;
     }
 
