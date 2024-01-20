@@ -7,6 +7,7 @@ public partial class Tile : RefCounted
     private Vector3I localPos;
     public Vector2I pos;
     public int height { get { return localPos.Y; }}
+    public float localHeight { get { return localPos.Y * stepHeight; }}
 
     public Vector3 center { get { return new Vector3(localPos.X, localPos.Y * stepHeight, localPos.Z); }}
     

@@ -28,9 +28,6 @@ public partial class MoveTargetState : BattleState
     protected override void OnFire(int type)
     {
         if (tiles.Contains(stateMachine.currentTile))
-        {
-            stateMachine.currentUnit.movement.AnimateMovement(stateMachine.currentTile);
-            stateMachine.ChangeState<SelectUnitState>();
-        }
+            stateMachine.ChangeState<MoveSequenceState>();
     }
 }

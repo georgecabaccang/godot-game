@@ -4,6 +4,7 @@ using Godot;
 public abstract partial class Movement : Node
 {
     public Unit unit;
+    public AnimationPlayer animator;
 
     public virtual List<Tile> GetTilesInRange(LevelMap levelMap)
     {
@@ -24,5 +25,5 @@ public abstract partial class Movement : Node
                 tiles.RemoveAt(i);
     }
 
-    public abstract void AnimateMovement(Tile tile);
+    public abstract Tween AnimateMovement(Tile tile);
 }

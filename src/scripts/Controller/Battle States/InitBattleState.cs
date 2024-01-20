@@ -22,11 +22,25 @@ public partial class InitBattleState : BattleState
         Unit sample = ResourceLoader.Load<PackedScene>("res://src/scenes/Units/Unit.tscn").Instantiate<Unit>();
         stateMachine.AddChild(sample);
         sample.movement = new WalkMovement();
-        sample.moveRange = 3;
+        sample.moveRange = 4;
         sample.jumpRange = 1;
         sample.Place(levelMap.GetTile(levelMap.startingPos));
         sample.Match();
+
+        Unit sample2 = ResourceLoader.Load<PackedScene>("res://src/scenes/Units/Unit.tscn").Instantiate<Unit>();
+        stateMachine.AddChild(sample2);
+        sample2.movement = new FlyMovement();
+        sample2.moveRange = 6;
+        sample2.Place(levelMap.GetTile(levelMap.startingPos + Vector2I.Up));
+        sample2.Match();
         
+        Unit sample3 = ResourceLoader.Load<PackedScene>("res://src/scenes/Units/Unit.tscn").Instantiate<Unit>();
+        stateMachine.AddChild(sample3);
+        sample3.movement = new TeleportMovement();
+        sample3.moveRange = 5;
+        sample3.Place(levelMap.GetTile(levelMap.startingPos + Vector2I.Down));
+        sample3.Match();
+
         SelectTile(levelMap.startingPos);
         GD.Print("Starting position is " + levelMap.startingPos);
 
